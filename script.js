@@ -1,4 +1,3 @@
-
 'use strict';
 
 //---------------------------------------------------------
@@ -134,6 +133,7 @@ console.log(ages)
 
  */
 //------------Array methods -----------------------
+/*
 const friends = ['Asif', 'Anam', 'Shaon']
 friends.push('Arman') //add new element at the end
 friends.push('Zoo')
@@ -155,3 +155,201 @@ console.log(friends.includes('Aldo'))
 if(friends.includes('Zoo')){
     console.log('You have a friend named Zoo')
 }
+*/
+
+//----------coding challenge 2(tip calculator) -----------------
+/*
+let bills = [125,555,44]
+
+function calcTip(bill){
+    let tip
+    if(bill>=50 && bill<=300 ){
+        tip = bill*(15/100)
+        return tip
+    }
+    else{
+        tip = bill*(20/100)
+        return tip
+    }
+}
+let tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
+
+console.log(tips)
+let total = [calcTip(bills[0]+tips[0]), calcTip(bills[1]+tips[1]), calcTip(bills[2]+tips[2]) ]
+
+console.log(total)
+
+ */
+//Array for sturctured data, Object for unstructured data
+//---------------Object---------------
+/*
+const anam = {
+    firstName: 'Asif',
+    lastName: 'Anam',
+    age: 2023 - 1999,
+    job: 'Software Engineer',
+    friends: ['Hi', 'Hello', 'Bello']
+}
+console.log(anam)
+console.log(anam.lastName)
+console.log(anam['friends'])
+
+const nameKey = 'Name'
+console.log(anam['first' + nameKey])
+
+// const interestedIn = prompt('What do you want to know?')
+// if(anam[interestedIn]){
+//     console.log(anam[interestedIn])
+// }
+// else {
+//     console.log()
+// }
+anam.location = 'Bangladesh'
+console.log(anam)
+console.log(`${anam.firstName} has ${anam.friends.length} friends and the best friend is ${anam.friends[0]}`)
+
+ */
+//-------------------object method-----------
+/*
+const anam = {
+    firstName: 'Asif',
+    lastName: 'Anam',
+    birthYear: 1999,
+    job: 'Software Engineer',
+    friends: ['Hi', 'Hello', 'Bello'],
+    hasDrivingLicense: false,
+
+    // calcAge: function (birthYear) {
+    //     console.log(this)
+    //     return 2023- this.birthYear
+    // }
+    calcAge: function (birthYear) {
+        this.age = 2023- this.birthYear
+        return this.age
+    },
+    getSummery: function (){
+    return `${this.firstName} is ${this.age} years old ${this.job}, and has ${(this.hasDrivingLicense)? 'a' : 'no'} driving license.`
+}
+
+}
+console.log(anam.calcAge())
+
+console.log(anam.age)
+console.log(anam.age)
+console.log(anam.age)
+
+
+console.log(anam.getSummery())
+
+// if(anam.hasDrivingLicense){
+//     console.log(`${anam.firstName} is ${anam.age} years old ${anam.job}, and has a driving license.`)
+// }
+// else{
+//     console.log(`${anam.firstName} is ${anam.age} years old ${anam.job}, and has no driving license.`)
+// }
+
+ */
+//----------------challenge 3 ---------------------
+/*
+const mark ={
+    fullName: 'Mark Miller',
+    height: 1.69,
+    weight: 78,
+    calcBmi: function (){
+        return (this.weight/(this.height**2))
+    }
+}
+const john={
+    fullName: 'John Smith',
+    height: 1.95,
+    weight: 92,
+    calcBmi: function (){
+        return (this.weight/(this.height**2))
+    }
+
+}
+let str = `John's BMI is (${john.calcBmi()}) is 
+${(john.calcBmi()>mark.calcBmi())? 'greater': 'less'} than Mark's BMI
+(${mark.calcBmi()})`
+console.log(str)
+
+ */
+
+//---------for loop -----------------------------
+
+// for(let rep =1; rep<=10; rep++){
+//     console.log(`Lifting weight repetition ${rep} 🏋🏽‍♂️🏋🏽‍♂️🏋`)
+// }
+
+//-----------------------------------------------
+/*
+const anam = [
+     'Asif',
+     'Anam',
+    2023 - 1999,
+    'Software Engineer',
+    ['Hi', 'Hello', 'Bello']
+]
+const types= []
+for(let i = 0; i<anam.length; i++){
+    console.log(anam[i], typeof anam[i])
+
+    // types[i] = typeof anam[i]
+    types.push(typeof anam[i])
+}
+console.log(types)
+
+ */
+
+//------------------------------------------------
+
+const years = [1991,2007,1969,2020]
+const  ages = []
+
+// for(let i = 0; i<years.length; i++){
+//     ages.push(2023-years[i])
+// }
+// console.log(ages)
+
+//-------------continue--------------------
+const anam = [
+    'Asif',
+    'Anam',
+    2023 - 1999,
+    'Software Engineer',
+    ['Hi', 'Hello', 'Bello'],
+    true,
+    401
+]
+console.log('----------Only strings---------------')
+for(let i = 0; i<anam.length; i++){
+    if(typeof anam[i]!== "string")
+        continue
+    else
+        console.log(anam[i])
+}
+console.log('----------break strings---------------')
+for(let i = 0; i<anam.length; i++){
+    if(typeof anam[i] == "number") {
+        break
+    }
+    else
+        console.log(anam[i])
+}
+//=============while=================
+
+let i =1
+while (i<10){
+    console.log(i)
+    i++
+}
+
+let dice = Math.trunc( Math.random()*6+1)
+
+ while(dice !== 6){
+    console.log(`You've rolled a ${dice}!`)
+    dice = Math.trunc( Math.random()*6+1)
+
+}
+
+
